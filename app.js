@@ -10,7 +10,7 @@ const port = 3001;
 //   });
 // });
 
-app.get("/", (req, res) => {
+app.get("/get", (req, res) => {
   return res.status(201).json({
     success: true,
     message: "hello world",

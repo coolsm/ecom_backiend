@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
+var cors = require("cors");
 require("./database/db");
+
 const bodyParser = require("body-parser");
 const User = require("./models/user");
 const port = 3001;
@@ -12,7 +14,7 @@ app.use(bodyParser.json());
 //     message: "API endpoint doesnt exist",
 //   });
 // });
-
+app.use(cors());
 app.post("/", async (req, res) => {
   // Extract user data from the request body
   const { name, email } = req.body;
